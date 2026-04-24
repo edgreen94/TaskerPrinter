@@ -1,6 +1,6 @@
-import screenshot1 from "../../imports/Simulator_Screenshot_-_iPhone_17_-_2026-04-24_at_06.54.43.png";
-import screenshot2 from "../../imports/Simulator_Screenshot_-_iPhone_17_-_2026-04-24_at_07.06.43.png";
-import screenshot3 from "../../imports/Simulator_Screenshot_-_iPhone_17_-_2026-04-24_at_06.55.25.png";
+import screenshotQueue from "../../imports/screenshot-queue.webp";
+import screenshotPrint from "../../imports/screenshot-print.webp";
+import screenshotSettings from "../../imports/screenshot-settings.webp";
 
 export default function AppScreenshots() {
   return (
@@ -22,7 +22,7 @@ export default function AppScreenshots() {
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 blur-3xl"></div>
               <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-8 border-gray-800">
                 <img
-                  src={screenshot2}
+                  src={screenshotPrint}
                   alt="Print screen"
                   className="rounded-[2.2rem] w-full"
                 />
@@ -42,7 +42,7 @@ export default function AppScreenshots() {
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-3xl"></div>
               <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-8 border-gray-800">
                 <img
-                  src={screenshot1}
+                  src={screenshotQueue}
                   alt="Queue screen"
                   className="rounded-[2.2rem] w-full"
                 />
@@ -62,7 +62,7 @@ export default function AppScreenshots() {
               <div className="absolute inset-0 bg-gradient-to-br from-lime-500/20 to-green-500/20 blur-3xl"></div>
               <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl border-8 border-gray-800">
                 <img
-                  src={screenshot3}
+                  src={screenshotSettings}
                   alt="Settings screen"
                   className="rounded-[2.2rem] w-full"
                 />

@@ -1,4 +1,4 @@
-import appIcon from "../../imports/TaskPrinter-iOS-Default-1024x1024@1x_Dark.png";
+import appIcon from "../../imports/task-printer-icon.webp";
 
 export default function AppIcon() {
   return (
