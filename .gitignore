@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+__figma__entrypoint__.ts
+*.tar.gz
+.DS_Store
+default_shadcn_theme.css
+guidelines/
