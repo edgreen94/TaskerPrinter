@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 dist/
 .env
@@ -5,5 +6,32 @@ dist/
 __figma__entrypoint__.ts
 *.tar.gz
 .DS_Store
+=======
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment files
+.env
+.env.local
+
+# Figma generated files
+__figma__entrypoint__.ts
+
+# Archives
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+>>>>>>> b0f7b6c1cf4f23d2e0e34f08b860fc667e1d9b19
 default_shadcn_theme.css
 guidelines/
