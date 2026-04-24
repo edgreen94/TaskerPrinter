@@ -11,8 +11,8 @@ export default function Home() {
     <>
       <Hero />
       <WorkflowVisual />
-      <AppIcon />
       <AppScreenshots />
+      <AppIcon />
       <HowItWorks />
       <CTA />
       <Footer />

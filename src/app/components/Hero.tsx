@@ -5,40 +5,56 @@ import Logo from "./Logo";
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col">
-      <header className="w-full px-6 py-6 flex justify-between items-center max-w-7xl mx-auto">
+      <header className="w-full px-4 sm:px-6 py-6 flex justify-between items-center gap-3 max-w-7xl mx-auto">
         <Logo />
         <nav className="hidden md:flex gap-8">
-          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">How It Works</a>
-          <a href="#setup" className="text-muted-foreground hover:text-foreground transition-colors">Download</a>
+          <a href="#workflow" className="text-muted-foreground hover:text-foreground transition-colors">See the Workflow</a>
+          <a href="#availability" className="text-muted-foreground hover:text-foreground transition-colors">Availability</a>
           <Link to="/help" className="text-muted-foreground hover:text-foreground transition-colors">Help</Link>
         </nav>
-        <a href="#how-it-works" className="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">
-          Get Started
+        <a
+          href="#availability"
+          className="bg-primary text-primary-foreground px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity text-sm sm:text-base whitespace-nowrap flex-shrink-0"
+        >
+          <span className="sm:hidden">Early Access</span>
+          <span className="hidden sm:inline">Get Early Access</span>
         </a>
       </header>
 
-      <div className="flex-1 flex items-center justify-center px-6 py-20">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="inline-block bg-secondary px-4 py-2 rounded-full mb-4">
-            <span className="text-sm">Physical productivity, digitally connected</span>
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-12 md:py-20">
+        <div className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8">
+          <div className="inline-block bg-secondary px-4 py-2 rounded-full mb-2 md:mb-4">
+            <span className="text-xs sm:text-sm">Physical productivity, digitally connected</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
             Your To-Do List,<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500">
-              Printed & Tangible
+              Printed &amp; Tangible
             </span>
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A simple app with a local queue that prints your tasks to a thermal printer.
-            No cloud, no complexity—just you, your phone, and your printer.
+          <p className="text-base sm:text-lg md:text-xl font-medium max-w-3xl mx-auto">
+            Ticker Printer is a mobile app that prints each to-do as a physical ticket on a thermal receipt printer.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <a href="#how-it-works" className="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:opacity-90 transition-opacity text-lg">
-              Get Started
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Built for people who think better with paper than push notifications. Local queue, local network, and no account required.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6">
+            <a href="#availability" className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:opacity-90 transition-opacity text-base sm:text-lg text-center">
+              Get Early Access
             </a>
+            <a href="#compatibility" className="border border-border px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-accent transition-colors text-base sm:text-lg text-center">
+              Check Printer Compatibility
+            </a>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-2 sm:gap-6 rounded-2xl border border-border bg-card/80 px-4 sm:px-5 py-3 sm:py-4 text-sm text-muted-foreground mx-auto max-w-max">
+            <span>iPhone beta in testing</span>
+            <span>Android interest list open</span>
+            <span>Works over local Wi-Fi with supported printers</span>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm text-muted-foreground">

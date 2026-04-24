@@ -1,17 +1,17 @@
 export default function WorkflowVisual() {
   return (
-    <section className="py-24 px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            How It Works
+    <section id="workflow" className="py-16 md:py-24 px-4 sm:px-6 bg-background scroll-mt-20">
+      <div className="max-w-7xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            Why It Feels Different
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Print, complete, collect. A simple, satisfying cycle.
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ticker Printer takes a digital list and turns it into something physical, visible, and satisfying to finish.
           </p>
         </div>
 
-        <div className="bg-black rounded-3xl p-6 md:p-12 shadow-xl border border-gray-800">
+        <div className="bg-black rounded-3xl p-5 sm:p-6 md:p-12 shadow-xl border border-gray-800">
           <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-8">
             {/* Step 1: Print tasks */}
             <div className="flex-1 text-center">
@@ -104,6 +104,49 @@ export default function WorkflowVisual() {
                 Build a visible pile of accomplishments
               </p>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-10 md:mt-12 grid gap-6 md:gap-8 lg:grid-cols-[1.15fr_0.85fr] items-stretch">
+          <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
+            <div className="mb-6 flex items-center justify-between text-sm text-muted-foreground">
+              <span>Sample printed ticket</span>
+              <span>58mm thermal layout</span>
+            </div>
+            <div className="mx-auto max-w-sm rounded-2xl border border-stone-200 bg-stone-50 px-6 py-7 text-stone-900 shadow-md">
+              <div className="border-b border-dashed border-stone-300 pb-3 text-center">
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-stone-500">Ticker Printer</p>
+                <h3 className="mt-3 text-2xl font-semibold">Post office run</h3>
+              </div>
+              <div className="space-y-4 py-5 font-mono text-sm leading-6 text-stone-700">
+                <p>Priority: Today</p>
+                <p>Notes: Return parcel and buy stamps</p>
+                <p>Printed: 08:45 AM</p>
+              </div>
+              <div className="border-t border-dashed border-stone-300 pt-4">
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex h-5 w-5 rounded-full border border-stone-400" />
+                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-stone-500">Done</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-gradient-to-br from-emerald-50 to-lime-50 p-6 sm:p-8 shadow-sm flex flex-col justify-center">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4">What You Can Expect</h3>
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                Real tasks print as clean, single-purpose tickets instead of disappearing into another app tab.
+              </p>
+              <p>
+                The result is simple: fewer vague lists, more visible next actions, and a stack of finished tasks you can actually see grow.
+              </p>
+            </div>
+            <ul className="mt-6 space-y-3 text-sm text-foreground">
+              <li className="rounded-2xl bg-white/70 px-4 py-3">One task per ticket for sharper focus</li>
+              <li className="rounded-2xl bg-white/70 px-4 py-3">A local queue so prints wait instead of disappearing</li>
+              <li className="rounded-2xl bg-white/70 px-4 py-3">A visible record of what you completed today</li>
+            </ul>
           </div>
         </div>
       </div>

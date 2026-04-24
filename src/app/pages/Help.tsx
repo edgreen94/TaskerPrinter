@@ -6,7 +6,7 @@ const faqs = [
   {
     icon: Printer,
     question: "Which printers are compatible?",
-    answer: "Ticker Printer works with most standard 58mm and 80mm thermal receipt printers that support ESC/POS commands. We recommend the Epson TM-M30, Star TSP143, MUNBYN IMP001, and Phomemo M02."
+    answer: "Ticker Printer is designed for ESC/POS-compatible 58mm and 80mm thermal receipt printers on the same local network. Start by checking models like the Epson TM-M30, Star TSP143, MUNBYN IMP001, and Phomemo M02."
   },
   {
     icon: Wifi,
@@ -34,44 +34,45 @@ export default function Help() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="w-full px-6 py-6 border-b border-border">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link to="/">
+      <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border">
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
+          <Link to="/" className="min-w-0">
             <Logo />
           </Link>
-          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-            Back to Home
+          <Link to="/" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap flex-shrink-0">
+            <span className="sm:hidden">Home</span>
+            <span className="hidden sm:inline">Back to Home</span>
           </Link>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="py-20 px-6">
+      <section className="py-12 md:py-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Help & Support</h1>
-          <p className="text-xl text-muted-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Help &amp; Support</h1>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
             Everything you need to get the most out of Ticker Printer
           </p>
         </div>
       </section>
 
       {/* FAQs */}
-      <section className="py-12 px-6">
+      <section className="py-10 md:py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">Frequently Asked Questions</h2>
+          <div className="space-y-5 sm:space-y-6">
             {faqs.map((faq, index) => {
               const Icon = faq.icon;
               return (
-                <div key={index} className="bg-card border border-border rounded-xl p-6">
-                  <div className="flex gap-4">
+                <div key={index} className="bg-card border border-border rounded-xl p-5 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-white" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{faq.question}</h3>
                       <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
@@ -83,10 +84,10 @@ export default function Help() {
       </section>
 
       {/* Troubleshooting */}
-      <section className="py-12 px-6 bg-muted/30">
+      <section className="py-10 md:py-12 px-4 sm:px-6 bg-muted/30">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Troubleshooting Tips</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">Troubleshooting Tips</h2>
+          <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
             <div className="bg-card border border-border rounded-xl p-6">
               <h3 className="text-lg font-semibold mb-3">Printer Not Found</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
@@ -131,22 +132,22 @@ export default function Help() {
       </section>
 
       {/* Contact */}
-      <section className="py-12 px-6">
+      <section className="py-10 md:py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Still Need Help?</h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Still Need Help?</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8">
             Can't find what you're looking for? Get in touch with our support team.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="mailto:support@tickerprinter.com"
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:opacity-90 transition-opacity"
+              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 rounded-lg hover:opacity-90 transition-opacity text-center"
             >
               Email Support
             </a>
             <Link
               to="/"
-              className="border border-border px-8 py-3 rounded-lg hover:bg-accent transition-colors"
+              className="border border-border px-6 sm:px-8 py-3 rounded-lg hover:bg-accent transition-colors text-center"
             >
               Back to Home
             </Link>
@@ -155,7 +156,7 @@ export default function Help() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-muted/30 border-t border-border py-8 px-6">
+      <footer className="bg-muted/30 border-t border-border py-8 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center text-sm text-muted-foreground">
           <p>© 2026 Ticker Printer. All rights reserved.</p>
         </div>

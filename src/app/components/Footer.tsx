@@ -3,10 +3,10 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-muted/30 border-t border-border py-12 px-6">
+    <footer className="bg-muted/30 border-t border-border py-10 md:py-12 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+          <div className="col-span-2">
             <Logo className="mb-4" />
             <p className="text-muted-foreground max-w-sm">
               Transform your digital tasks into physical receipts.
@@ -17,9 +17,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#how-it-works" className="hover:text-foreground transition-colors">How It Works</a></li>
-              <li><a href="#setup" className="hover:text-foreground transition-colors">Download</a></li>
-              <li><Link to="/help" className="hover:text-foreground transition-colors">Compatible Printers</Link></li>
+              <li><a href="#workflow" className="hover:text-foreground transition-colors">See the Workflow</a></li>
+              <li><a href="#availability" className="hover:text-foreground transition-colors">Availability</a></li>
+              <li><a href="#compatibility" className="hover:text-foreground transition-colors">Printer Compatibility</a></li>
             </ul>
           </div>
 
