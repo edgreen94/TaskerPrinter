@@ -1,3 +1,5 @@
+import { Sunrise, Focus, Layers } from "lucide-react";
+
 export default function WorkflowVisual() {
   return (
     <section id="workflow" className="py-16 md:py-24 px-4 sm:px-6 bg-background scroll-mt-20">
@@ -12,11 +14,11 @@ export default function WorkflowVisual() {
         </div>
 
         <div className="bg-black rounded-3xl p-5 sm:p-6 md:p-12 shadow-xl border border-gray-800">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-8">
+          <div className="flex flex-col md:flex-row items-stretch md:items-start justify-between gap-5 md:gap-8">
             {/* Step 1: Print tasks */}
             <div className="flex-1 text-center">
-              <div className="h-40 flex items-center justify-center mb-6">
-                <svg width="140" height="140" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
+                <svg className="w-32 h-32 md:w-[140px] md:h-[140px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="60" y="20" width="80" height="85" rx="3" fill="white" stroke="#e5e7eb" strokeWidth="2"/>
                   <text x="100" y="42" fontSize="11" fill="#1f2937" fontWeight="600" textAnchor="middle">To Do</text>
                   <circle cx="70" cy="55" r="2" fill="#1f2937" />
@@ -33,52 +35,52 @@ export default function WorkflowVisual() {
                   <rect x="50" y="150" width="20" height="8" rx="2" fill="#1a202c" />
                 </svg>
               </div>
-              <div className="text-sm font-semibold text-green-400 mb-2 h-5">1. Print tasks</div>
-              <p className="text-gray-400 text-sm h-10">
+              <div className="text-sm font-semibold text-green-400 mb-2 md:h-5">1. Print tasks</div>
+              <p className="text-gray-400 text-sm md:h-10">
                 Each task prints as an individual ticket
               </p>
             </div>
 
-            {/* Arrow */}
-            <div className="hidden md:block text-gray-600 flex-shrink-0 pt-16">
-              <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Connector: down on mobile, right on desktop */}
+            <div className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
+              <svg className="w-8 h-8 rotate-90 md:w-10 md:h-10 md:rotate-0" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 30 L45 30 M35 20 L45 30 L35 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
             {/* Step 2: Single tasks as tickets */}
             <div className="flex-1 text-center">
-              <div className="h-40 flex items-center justify-center mb-6">
-                <div className="flex gap-2">
+              <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
+                <div className="grid grid-cols-2 gap-2 md:flex md:gap-2">
                   {['Wash\ncar', 'Change\nbedding', 'Dry\nclean', 'Wrap\ngift'].map((task, i) => (
                     <div
                       key={i}
-                      className="bg-white border-2 border-gray-200 rounded p-2 w-14 h-16 flex items-center justify-center shadow-sm"
+                      className="bg-white border-2 border-gray-200 rounded p-2 w-16 h-20 md:w-14 md:h-16 flex items-center justify-center shadow-sm"
                     >
-                      <div className="text-[7px] text-gray-700 font-mono text-center whitespace-pre-line leading-tight font-semibold">
+                      <div className="text-[8px] md:text-[7px] text-gray-700 font-mono text-center whitespace-pre-line leading-tight font-semibold">
                         {task}
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="text-sm font-semibold text-emerald-400 mb-2 h-5">2. Single tasks as tickets</div>
-              <p className="text-gray-400 text-sm h-10">
+              <div className="text-sm font-semibold text-emerald-400 mb-2 md:h-5">2. Single tasks as tickets</div>
+              <p className="text-gray-400 text-sm md:h-10">
                 One task per ticket keeps you focused
               </p>
             </div>
 
-            {/* Arrow */}
-            <div className="hidden md:block text-gray-600 flex-shrink-0 pt-16">
-              <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Connector: down on mobile, right on desktop */}
+            <div className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
+              <svg className="w-8 h-8 rotate-90 md:w-10 md:h-10 md:rotate-0" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 30 L45 30 M35 20 L45 30 L35 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
             {/* Step 3: Push over the spike when done */}
             <div className="flex-1 text-center">
-              <div className="h-40 flex items-center justify-center mb-6">
-                <svg width="140" height="140" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
+                <svg className="w-32 h-32 md:w-[140px] md:h-[140px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="100" cy="165" rx="35" ry="8" fill="#1a202c" />
                   <rect x="97" y="80" width="6" height="85" fill="#4a5568" />
                   <polygon points="100,70 95,80 105,80" fill="#4a5568" />
@@ -99,8 +101,8 @@ export default function WorkflowVisual() {
                   </g>
                 </svg>
               </div>
-              <div className="text-sm font-semibold text-lime-400 mb-2 h-5">3. Stack when done</div>
-              <p className="text-gray-400 text-sm h-10">
+              <div className="text-sm font-semibold text-lime-400 mb-2 md:h-5">3. Stack when done</div>
+              <p className="text-gray-400 text-sm md:h-10">
                 Build a visible pile of accomplishments
               </p>
             </div>
@@ -113,40 +115,59 @@ export default function WorkflowVisual() {
               <span>Sample printed ticket</span>
               <span>58mm thermal layout</span>
             </div>
-            <div className="mx-auto max-w-sm rounded-2xl border border-stone-200 bg-stone-50 px-6 py-7 text-stone-900 shadow-md">
-              <div className="border-b border-dashed border-stone-300 pb-3 text-center">
-                <p className="font-mono text-xs uppercase tracking-[0.3em] text-stone-500">Ticker Printer</p>
-                <h3 className="mt-3 text-2xl font-semibold">Post office run</h3>
-              </div>
-              <div className="space-y-4 py-5 font-mono text-sm leading-6 text-stone-700">
-                <p>Priority: Today</p>
-                <p>Notes: Return parcel and buy stamps</p>
-                <p>Printed: 08:45 AM</p>
-              </div>
-              <div className="border-t border-dashed border-stone-300 pt-4">
-                <div className="flex items-center gap-3">
-                  <span className="inline-flex h-5 w-5 rounded-full border border-stone-400" />
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-stone-500">Done</span>
+            <div className="mx-auto max-w-sm rounded-2xl bg-black p-3 shadow-md">
+              <div className="rounded-xl bg-stone-100 px-5 py-6 text-stone-900 font-mono">
+                <div className="text-center space-y-1.5">
+                  <p className="text-xs uppercase tracking-[0.25em] text-stone-700">Rosewood Cottage</p>
+                  <p className="text-xs tracking-wider text-stone-500">Mon 27 Apr, 08:45</p>
                 </div>
+                <div className="my-4 border-t border-dashed border-stone-400" />
+                <h3 className="text-center text-lg sm:text-xl font-black uppercase tracking-[0.08em] leading-tight">
+                  Post office run
+                </h3>
+                <div className="my-4 border-t border-dashed border-stone-400" />
+                <p className="text-center text-xs uppercase tracking-[0.25em] text-stone-500">
+                  Created by &mdash; Alex
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-gradient-to-br from-emerald-50 to-lime-50 p-6 sm:p-8 shadow-sm flex flex-col justify-center">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4">What You Can Expect</h3>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Real tasks print as clean, single-purpose tickets instead of disappearing into another app tab.
-              </p>
-              <p>
-                The result is simple: fewer vague lists, more visible next actions, and a stack of finished tasks you can actually see grow.
-              </p>
+          <div className="rounded-3xl border border-border bg-gradient-to-br from-emerald-50 to-lime-50 p-6 sm:p-8 shadow-sm flex flex-col">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-700 mb-3">Three things you&rsquo;ll notice</p>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-6 sm:mb-7">A calmer shape for the day</h3>
+
+            <div className="space-y-5 sm:space-y-6">
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
+                  <Sunrise className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold mb-1">A stack instead of a scroll</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">Tomorrow&rsquo;s tickets print and wait on your desk before you&rsquo;ve had coffee.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
+                  <Focus className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold mb-1">One ticket at a time</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">The rest of the list stays in your pocket until this one is done.</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
+                  <Layers className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold mb-1">Proof, not a notification</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">A visible pile of finished tickets at day&rsquo;s end &mdash; not a badge that fades.</p>
+                </div>
+              </div>
             </div>
-            <ul className="mt-6 space-y-3 text-sm text-foreground">
-              <li className="rounded-2xl bg-white/70 px-4 py-3">One task per ticket for sharper focus</li>
-              <li className="rounded-2xl bg-white/70 px-4 py-3">A local queue so prints wait instead of disappearing</li>
-              <li className="rounded-2xl bg-white/70 px-4 py-3">A visible record of what you completed today</li>
-            </ul>
           </div>
         </div>
       </div>

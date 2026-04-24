@@ -8,10 +8,10 @@ export default function AppScreenshots() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Proof In The Product
+            Three screens, on purpose
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            A focused mobile experience for creating tasks, previewing tickets, and managing a local print queue.
+            We kept it small. Write the task, watch the queue, point it at your printer. That&rsquo;s the whole app.
           </p>
         </div>
 
@@ -23,15 +23,15 @@ export default function AppScreenshots() {
               <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
                 <img
                   src={screenshotPrint}
-                  alt="Print screen"
+                  alt="Ticker Printer compose screen"
                   className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>
             <div className="mt-5 sm:mt-6 text-center">
-              <h3 className="font-semibold mb-2">Create &amp; Preview</h3>
+              <h3 className="font-semibold mb-2">Write the ticket</h3>
               <p className="text-sm text-muted-foreground">
-                See exactly how your task will print
+                A single calm canvas. Type, preview, print.
               </p>
             </div>
           </div>
@@ -43,15 +43,15 @@ export default function AppScreenshots() {
               <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
                 <img
                   src={screenshotQueue}
-                  alt="Queue screen"
+                  alt="Ticker Printer print queue"
                   className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>
             <div className="mt-5 sm:mt-6 text-center">
-              <h3 className="font-semibold mb-2">Local Queue</h3>
+              <h3 className="font-semibold mb-2">Nothing goes missing</h3>
               <p className="text-sm text-muted-foreground">
-                Tasks queue automatically until printer is ready
+                Prints wait in a local queue. Turn the printer on &mdash; they finish themselves.
               </p>
             </div>
           </div>
@@ -63,15 +63,15 @@ export default function AppScreenshots() {
               <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
                 <img
                   src={screenshotSettings}
-                  alt="Settings screen"
+                  alt="Ticker Printer printer settings"
                   className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>
             <div className="mt-5 sm:mt-6 text-center">
-              <h3 className="font-semibold mb-2">Simple Setup</h3>
+              <h3 className="font-semibold mb-2">Set it once</h3>
               <p className="text-sm text-muted-foreground">
-                Connect to your local network printer
+                Pair your printer over local Wi-Fi. No accounts, no cloud.
               </p>
             </div>
           </div>

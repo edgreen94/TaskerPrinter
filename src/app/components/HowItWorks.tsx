@@ -34,7 +34,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10 md:gap-12 relative">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-12 relative">
           {steps.map((step, index) => {
             const Icon = step.icon;
             const gradients = [
@@ -49,13 +49,16 @@ export default function HowItWorks() {
                   <div className="hidden md:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-green-400 via-emerald-500 to-lime-400"
                        style={{ zIndex: 0 }} />
                 )}
-                <div className="relative z-10 text-center">
-                  <div className={`inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br ${gradient} text-white rounded-2xl mb-5 md:mb-6 shadow-xl`}>
-                    <Icon className="w-8 h-8 sm:w-10 sm:h-10" />
+                <div className="relative z-10 flex flex-row items-start gap-5 text-left md:flex-col md:items-center md:text-center md:gap-0">
+                  <div className={`flex-shrink-0 inline-flex items-center justify-center w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br ${gradient} text-white rounded-2xl shadow-xl md:mb-6`}>
+                    <Icon className="w-7 h-7 md:w-10 md:h-10" />
                   </div>
-                  <div className="text-5xl sm:text-6xl font-bold text-muted/20 mb-2">{step.number}</div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <div className="flex-1 min-w-0 md:w-full">
+                    <div className="text-xs font-semibold tracking-[0.2em] text-muted-foreground mb-1 md:hidden">STEP {step.number}</div>
+                    <div className="hidden md:block text-6xl font-bold text-muted/20 mb-2">{step.number}</div>
+                    <h3 className="text-lg md:text-2xl font-semibold mb-2 md:mb-3">{step.title}</h3>
+                    <p className="text-muted-foreground text-sm md:text-base">{step.description}</p>
+                  </div>
                 </div>
               </div>
             );
