@@ -6,19 +6,24 @@ export default function WorkflowVisual() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Why It Feels Different
+            Why it feels different
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ticker Printer takes a digital list and turns it into something physical, visible, and satisfying to finish.
+            A digital list becomes something physical, visible, and satisfying to finish.
           </p>
         </div>
 
         <div className="bg-black rounded-3xl p-5 sm:p-6 md:p-12 shadow-xl border border-gray-800">
           <div className="flex flex-col md:flex-row items-stretch md:items-start justify-between gap-5 md:gap-8">
-            {/* Step 1: Print tasks */}
             <div className="flex-1 text-center">
               <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
-                <svg className="w-32 h-32 md:w-[140px] md:h-[140px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  aria-hidden="true"
+                  className="w-32 h-32 md:w-[140px] md:h-[140px]"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <rect x="60" y="20" width="80" height="85" rx="3" fill="white" stroke="#e5e7eb" strokeWidth="2"/>
                   <text x="100" y="42" fontSize="11" fill="#1f2937" fontWeight="600" textAnchor="middle">To Do</text>
                   <circle cx="70" cy="55" r="2" fill="#1f2937" />
@@ -41,14 +46,12 @@ export default function WorkflowVisual() {
               </p>
             </div>
 
-            {/* Connector: down on mobile, right on desktop */}
-            <div className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
+            <div aria-hidden="true" className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
               <svg className="w-8 h-8 rotate-90 md:w-10 md:h-10 md:rotate-0" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 30 L45 30 M35 20 L45 30 L35 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
-            {/* Step 2: Single tasks as tickets */}
             <div className="flex-1 text-center">
               <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
                 <div className="grid grid-cols-2 gap-2 md:flex md:gap-2">
@@ -70,17 +73,21 @@ export default function WorkflowVisual() {
               </p>
             </div>
 
-            {/* Connector: down on mobile, right on desktop */}
-            <div className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
+            <div aria-hidden="true" className="flex items-center justify-center text-gray-600 flex-shrink-0 md:pt-16">
               <svg className="w-8 h-8 rotate-90 md:w-10 md:h-10 md:rotate-0" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 30 L45 30 M35 20 L45 30 L35 40" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
-            {/* Step 3: Push over the spike when done */}
             <div className="flex-1 text-center">
               <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">
-                <svg className="w-32 h-32 md:w-[140px] md:h-[140px]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg
+                  aria-hidden="true"
+                  className="w-32 h-32 md:w-[140px] md:h-[140px]"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <ellipse cx="100" cy="165" rx="35" ry="8" fill="#1a202c" />
                   <rect x="97" y="80" width="6" height="85" fill="#4a5568" />
                   <polygon points="100,70 95,80 105,80" fill="#4a5568" />
@@ -109,7 +116,7 @@ export default function WorkflowVisual() {
           </div>
         </div>
 
-        <div className="mt-10 md:mt-12 grid gap-6 md:gap-8 lg:grid-cols-[1.15fr_0.85fr] items-stretch">
+        <div className="mt-10 md:mt-12 grid gap-6 md:gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
           <div className="rounded-3xl border border-border bg-card p-6 sm:p-8 shadow-sm">
             <div className="mb-6 flex items-center justify-between text-sm text-muted-foreground">
               <span>Sample printed ticket</span>
@@ -119,7 +126,7 @@ export default function WorkflowVisual() {
               <div className="rounded-xl bg-stone-100 px-5 py-6 text-stone-900 font-mono">
                 <div className="text-center space-y-1.5">
                   <p className="text-xs uppercase tracking-[0.25em] text-stone-700">Rosewood Cottage</p>
-                  <p className="text-xs tracking-wider text-stone-500">Mon 27 Apr, 08:45</p>
+                  <p className="text-xs tracking-wider text-stone-500">Mon 27 Apr 2026, 08:45</p>
                 </div>
                 <div className="my-4 border-t border-dashed border-stone-400" />
                 <h3 className="text-center text-lg sm:text-xl font-black uppercase tracking-[0.08em] leading-tight">
@@ -140,7 +147,7 @@ export default function WorkflowVisual() {
             <div className="space-y-5 sm:space-y-6">
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
-                  <Sunrise className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                  <Sunrise className="w-5 h-5 text-emerald-600" strokeWidth={2.25} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold mb-1">A stack instead of a scroll</p>
@@ -150,7 +157,7 @@ export default function WorkflowVisual() {
 
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
-                  <Focus className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                  <Focus className="w-5 h-5 text-emerald-600" strokeWidth={2.25} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold mb-1">One ticket at a time</p>
@@ -160,7 +167,7 @@ export default function WorkflowVisual() {
 
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white border border-emerald-200 flex items-center justify-center shadow-sm">
-                  <Layers className="w-5 h-5 text-emerald-600" strokeWidth={2.25} />
+                  <Layers className="w-5 h-5 text-emerald-600" strokeWidth={2.25} aria-hidden="true" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold mb-1">Proof, not a notification</p>

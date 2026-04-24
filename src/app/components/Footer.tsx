@@ -9,32 +9,31 @@ export default function Footer() {
           <div className="col-span-2">
             <Logo className="mb-4" />
             <p className="text-muted-foreground max-w-sm">
-              Transform your digital tasks into physical receipts.
-              Productivity you can hold in your hands.
+              A calmer to-do list that lives on your desk, not your lock screen.
             </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Product</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#workflow" className="hover:text-foreground transition-colors">See the Workflow</a></li>
+              <li><a href="#workflow" className="hover:text-foreground transition-colors">The workflow</a></li>
               <li><a href="#availability" className="hover:text-foreground transition-colors">Availability</a></li>
-              <li><a href="#compatibility" className="hover:text-foreground transition-colors">Printer Compatibility</a></li>
+              <li><a href="#compatibility" className="hover:text-foreground transition-colors">Printer compatibility</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><Link to="/help" className="hover:text-foreground transition-colors">Help Center</Link></li>
-              <li><a href="mailto:support@tickerprinter.com" className="hover:text-foreground transition-colors">Contact Us</a></li>
+              <li><Link to="/help" className="hover:text-foreground transition-colors">Help centre</Link></li>
+              <li><a href="mailto:support@tickerprinter.com" className="hover:text-foreground transition-colors">Email us</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2026 Ticker Printer. All rights reserved.
+            &copy; 2026 Ticker Printer. Made for people who like paper.
           </p>
         </div>
       </div>

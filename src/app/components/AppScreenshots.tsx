@@ -15,16 +15,15 @@ export default function AppScreenshots() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-8 max-w-5xl mx-auto">
-          {/* Screenshot 1 - Print */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 max-w-5xl mx-auto">
           <div className="flex flex-col items-center">
-            <div className="relative w-full max-w-[260px] sm:max-w-none">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 blur-3xl"></div>
-              <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
+            <div className="relative w-full max-w-[260px]">
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 blur-3xl"></div>
+              <div className="relative bg-gray-900 rounded-[2.25rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-8 border-gray-800">
                 <img
                   src={screenshotPrint}
-                  alt="Ticker Printer compose screen"
-                  className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
+                  alt="Ticker Printer compose screen with a task being written"
+                  className="rounded-[1.5rem] md:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>
@@ -36,15 +35,14 @@ export default function AppScreenshots() {
             </div>
           </div>
 
-          {/* Screenshot 2 - Queue */}
           <div className="flex flex-col items-center">
-            <div className="relative w-full max-w-[260px] sm:max-w-none">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-3xl"></div>
-              <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
+            <div className="relative w-full max-w-[260px]">
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 blur-3xl"></div>
+              <div className="relative bg-gray-900 rounded-[2.25rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-8 border-gray-800">
                 <img
                   src={screenshotQueue}
-                  alt="Ticker Printer print queue"
-                  className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
+                  alt="Ticker Printer print queue listing pending and completed tickets"
+                  className="rounded-[1.5rem] md:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>
@@ -56,15 +54,14 @@ export default function AppScreenshots() {
             </div>
           </div>
 
-          {/* Screenshot 3 - Settings */}
-          <div className="flex flex-col items-center sm:col-span-2 md:col-span-1">
-            <div className="relative w-full max-w-[260px] sm:max-w-none">
-              <div className="absolute inset-0 bg-gradient-to-br from-lime-500/20 to-green-500/20 blur-3xl"></div>
-              <div className="relative bg-gray-900 rounded-[2.25rem] sm:rounded-[3rem] p-2 sm:p-3 shadow-2xl border-[6px] sm:border-8 border-gray-800">
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-[260px]">
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-br from-lime-500/20 to-green-500/20 blur-3xl"></div>
+              <div className="relative bg-gray-900 rounded-[2.25rem] md:rounded-[3rem] p-2 md:p-3 shadow-2xl border-[6px] md:border-8 border-gray-800">
                 <img
                   src={screenshotSettings}
-                  alt="Ticker Printer printer settings"
-                  className="rounded-[1.5rem] sm:rounded-[2.2rem] w-full"
+                  alt="Ticker Printer printer settings and pairing screen"
+                  className="rounded-[1.5rem] md:rounded-[2.2rem] w-full"
                 />
               </div>
             </div>

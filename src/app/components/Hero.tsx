@@ -1,14 +1,13 @@
-import { CheckCircle2 } from "lucide-react";
 import { Link } from "react-router";
 import Logo from "./Logo";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col">
+    <section className="min-h-[92vh] flex flex-col">
       <header className="w-full px-4 sm:px-6 py-6 flex justify-between items-center gap-3 max-w-7xl mx-auto">
         <Logo />
         <nav className="hidden md:flex gap-8">
-          <a href="#workflow" className="text-muted-foreground hover:text-foreground transition-colors">See the Workflow</a>
+          <a href="#workflow" className="text-muted-foreground hover:text-foreground transition-colors">The workflow</a>
           <a href="#availability" className="text-muted-foreground hover:text-foreground transition-colors">Availability</a>
           <Link to="/help" className="text-muted-foreground hover:text-foreground transition-colors">Help</Link>
         </nav>
@@ -16,60 +15,35 @@ export default function Hero() {
           href="#availability"
           className="bg-primary text-primary-foreground px-4 sm:px-6 py-2 rounded-lg hover:opacity-90 transition-opacity text-sm sm:text-base whitespace-nowrap flex-shrink-0"
         >
-          <span className="sm:hidden">Early Access</span>
-          <span className="hidden sm:inline">Get Early Access</span>
+          <span className="sm:hidden">Early access</span>
+          <span className="hidden sm:inline">Get early access</span>
         </a>
       </header>
 
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-12 md:py-20">
         <div className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8">
           <div className="inline-block bg-secondary px-4 py-2 rounded-full mb-2 md:mb-4">
-            <span className="text-xs sm:text-sm">Physical productivity, digitally connected</span>
+            <span className="text-xs sm:text-sm">Productivity you can pick up</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
-            Your To-Do List,<br />
+            Your to-do list,<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500">
-              Printed &amp; Tangible
+              printed &amp; tangible
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl font-medium max-w-3xl mx-auto">
-            Ticker Printer is a mobile app that prints each to-do as a physical ticket on a thermal receipt printer.
-          </p>
-
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Built for people who think better with paper than push notifications. Local queue, local network, and no account required.
+            Ticker Printer turns each task into a physical ticket on a thermal receipt printer. Built for people who think better with paper than push notifications.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center pt-4 md:pt-6">
             <a href="#availability" className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:opacity-90 transition-opacity text-base sm:text-lg text-center">
-              Get Early Access
+              Get early access
             </a>
             <a href="#compatibility" className="border border-border px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-accent transition-colors text-base sm:text-lg text-center">
-              Check Printer Compatibility
+              Check printer compatibility
             </a>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-2 sm:gap-6 rounded-2xl border border-border bg-card/80 px-4 sm:px-5 py-3 sm:py-4 text-sm text-muted-foreground mx-auto max-w-max">
-            <span>iPhone beta in testing</span>
-            <span>Android interest list open</span>
-            <span>Works over local Wi-Fi with supported printers</span>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-green-500" />
-              <span>Local network only</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-              <span>No account needed</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-lime-500" />
-              <span>Privacy first</span>
-            </div>
           </div>
         </div>
       </div>

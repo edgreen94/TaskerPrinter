@@ -2,7 +2,7 @@ export default function Logo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="relative w-10 h-10 rounded-lg bg-gradient-to-br from-green-300 via-emerald-400 to-emerald-600 flex items-center justify-center p-1.5 shadow-md">
-        <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none">
+        <svg aria-hidden="true" width="100%" height="100%" viewBox="0 0 200 200" fill="none">
           <rect x="60" y="30" width="80" height="70" rx="3" fill="white" />
           <text x="100" y="52" fontSize="12" fill="#1f2937" fontWeight="600" textAnchor="middle">To Do</text>
           <circle cx="70" cy="65" r="2" fill="#1f2937" />

@@ -1,6 +1,5 @@
 import Hero from "../components/Hero";
 import WorkflowVisual from "../components/WorkflowVisual";
-import AppIcon from "../components/AppIcon";
 import AppScreenshots from "../components/AppScreenshots";
 import HowItWorks from "../components/HowItWorks";
 import CTA from "../components/CTA";
@@ -12,7 +11,6 @@ export default function Home() {
       <Hero />
       <WorkflowVisual />
       <AppScreenshots />
-      <AppIcon />
       <HowItWorks />
       <CTA />
       <Footer />
