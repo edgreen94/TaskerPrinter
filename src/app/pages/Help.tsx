@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import Logo from "../components/Logo";
+import RouteMeta from "../components/RouteMeta";
 import { Printer, Smartphone, Wifi, RefreshCw, AlertCircle } from "lucide-react";
 
 const faqs = [
@@ -33,6 +34,11 @@ const faqs = [
 export default function Help() {
   return (
     <div className="min-h-screen bg-background">
+      <RouteMeta
+        title="Help & support — Ticker Printer"
+        description="Getting Ticker Printer set up, staying set up, and a few things people ask about printers, Wi-Fi, and queues."
+        path="/help"
+      />
       <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
           <Link to="/" className="min-w-0">

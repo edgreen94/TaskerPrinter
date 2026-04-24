@@ -1,9 +1,15 @@
 import { Link } from "react-router";
 import Logo from "../components/Logo";
+import RouteMeta from "../components/RouteMeta";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <RouteMeta
+        title="Page not found — Ticker Printer"
+        description="This page didn't make the queue. Head back to the Ticker Printer homepage."
+        path="/404"
+      />
       <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
           <Link to="/" className="min-w-0">
