@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment files
+.env
+.env.local
+
+# Figma generated files
+__figma__entrypoint__.ts
+
+# Archives
+*.tar.gz
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+default_shadcn_theme.css
+guidelines/
