@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TICKETS = [
   { task: "Post office run", time: "Mon 27 Apr 2026, 08:45" },
@@ -10,21 +10,26 @@ const TICKETS = [
 export default function SampleTicket() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
+  const swapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) return;
 
     const cycle = setInterval(() => {
+      if (swapTimeoutRef.current) clearTimeout(swapTimeoutRef.current);
       setVisible(false);
-      const swap = setTimeout(() => {
+      swapTimeoutRef.current = setTimeout(() => {
         setIndex((i) => (i + 1) % TICKETS.length);
         setVisible(true);
+        swapTimeoutRef.current = null;
       }, 280);
-      return () => clearTimeout(swap);
     }, 4200);
 
-    return () => clearInterval(cycle);
+    return () => {
+      clearInterval(cycle);
+      if (swapTimeoutRef.current) clearTimeout(swapTimeoutRef.current);
+    };
   }, []);
 
   const ticket = TICKETS[index];
