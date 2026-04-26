@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Link } from "react-router";
 import Logo from "../components/Logo";
 import RouteMeta from "../components/RouteMeta";
-import { Printer, Smartphone, Wifi, RefreshCw, AlertCircle } from "lucide-react";
+import { Printer, Smartphone, Wifi, RefreshCw, AlertCircle, Menu, X } from "lucide-react";
 
 const faqs = [
   {
@@ -32,6 +33,10 @@ const faqs = [
 ];
 
 export default function Help() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <div className="min-h-screen bg-background">
       <RouteMeta
@@ -39,19 +44,59 @@ export default function Help() {
         description="Getting Ticker Printer set up, staying set up, and a few things people ask about printers, Wi-Fi, and queues."
         path="/help"
       />
-      <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border">
+      <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
-          <Link to="/" className="min-w-0">
+          <Link to="/" className="min-w-0" onClick={closeMenu}>
             <Logo />
           </Link>
-          <Link to="/" className="text-sm sm:text-base text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap flex-shrink-0">
-            <span className="sm:hidden">Home</span>
-            <span className="hidden sm:inline">Back to home</span>
-          </Link>
+
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#help-faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQs</a>
+            <a href="#help-troubleshooting" className="text-muted-foreground hover:text-foreground transition-colors">Troubleshooting</a>
+            <a href="#help-contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+            <Link to="/#availability" className="text-muted-foreground hover:text-foreground transition-colors">Early access</Link>
+            <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Back to home</Link>
+          </nav>
+
+          <div className="flex items-center gap-2 md:hidden">
+            <button
+              type="button"
+              className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+              aria-expanded={menuOpen}
+              aria-controls="help-mobile-nav"
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              {menuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
+              <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
+            </button>
+          </div>
         </div>
+
+        {menuOpen && (
+          <div
+            id="help-mobile-nav"
+            className="md:hidden border-t border-border bg-background px-4 py-4 space-y-1"
+          >
+            <a href="#help-faq" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+              FAQs
+            </a>
+            <a href="#help-troubleshooting" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+              Troubleshooting
+            </a>
+            <a href="#help-contact" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+              Contact
+            </a>
+            <Link to="/#availability" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+              Early access
+            </Link>
+            <Link to="/" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+              Back to home
+            </Link>
+          </div>
+        )}
       </header>
 
-      <section className="py-12 md:py-20 px-4 sm:px-6">
+      <section className="py-12 md:py-20 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Help &amp; support</h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
@@ -60,7 +105,7 @@ export default function Help() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 px-4 sm:px-6">
+      <section id="help-faq" className="py-10 md:py-12 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">Frequently asked</h2>
           <div className="space-y-5 sm:space-y-6">
@@ -86,7 +131,7 @@ export default function Help() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 px-4 sm:px-6 bg-muted/30">
+      <section id="help-troubleshooting" className="py-10 md:py-12 px-4 sm:px-6 bg-muted/30 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">When something goes wrong</h2>
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
@@ -133,7 +178,7 @@ export default function Help() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 px-4 sm:px-6">
+      <section id="help-contact" className="py-10 md:py-12 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Still stuck?</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8">
