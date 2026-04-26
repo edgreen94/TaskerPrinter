@@ -1,6 +1,6 @@
 {
-  "name": "Ticker Printer",
-  "short_name": "Ticker Printer",
+  "name": "Print-It",
+  "short_name": "Print-It",
   "description": "A to-do list you can hold. Each task prints as a physical ticket on a thermal receipt printer.",
   "start_url": "/",
   "display": "standalone",

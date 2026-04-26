@@ -13,9 +13,13 @@ export default function WorkflowVisual() {
 
       <WorkflowSteps />
 
-      <div className="mt-10 md:mt-12 grid gap-6 md:gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start">
-        <SampleTicket />
-        <ExpectationsCard />
+      <div className="mt-14 md:mt-16">
+        <div className="rounded-[1.75rem] border border-border/70 bg-muted/25 p-4 shadow-sm ring-1 ring-black/[0.02] sm:p-5 md:p-6">
+          <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+            <SampleTicket />
+            <ExpectationsCard />
+          </div>
+        </div>
       </div>
     </SectionShell>
   );

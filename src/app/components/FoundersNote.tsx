@@ -1,25 +1,25 @@
 export default function FoundersNote() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-muted/30">
+    <section id="founder" className="py-20 md:py-28 px-4 sm:px-6 bg-muted/25 scroll-mt-24 md:scroll-mt-28">
       <div className="max-w-3xl mx-auto">
-        <div className="rounded-3xl border border-border bg-card px-6 sm:px-10 py-8 sm:py-12 shadow-sm">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-800 mb-4 sm:mb-5">
-            A note from the desk
+        <div className="rounded-3xl border border-border/80 bg-card px-6 sm:px-10 py-9 sm:py-12 shadow-sm ring-1 ring-black/[0.02]">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-emerald-800/90 mb-4 sm:mb-5">
+            Why I built Print-It
           </p>
-          <div className="space-y-4 text-base sm:text-lg text-stone-700 leading-relaxed">
+          <div className="space-y-5 text-base sm:text-lg text-stone-700 leading-relaxed">
             <p>
-              I built Ticker Printer because my to-do list kept drowning in the same phone that was supposed to help me get through it. Every notification was a small tug in the wrong direction.
+              I built Print-It because my to-do list kept getting buried in the same device that was supposed to help me stay on track. Every notification pulled me away from the one thing I actually needed to focus on.
             </p>
             <p>
-              The fix, it turned out, was old-fashioned: get the next task onto a piece of paper and put the phone down. A thermal printer on the desk, one ticket at a time, a satisfying little tear when it&rsquo;s done.
+              The solution ended up being simple: print the next task, put the phone aside, and keep the work right in front of me. One small ticket on the desk. One clear next step. One satisfying tear when it&rsquo;s done.
             </p>
             <p>
-              It&rsquo;s early days &mdash; iPhone beta first, Android soon after. If any of this sounds like it&rsquo;d suit how you think, I&rsquo;d love to hear from you.
+              Print-It is still early&mdash;iPhone beta is live, and Android is on the way. If this sounds like a better way to work, I&rsquo;d love to hear what you think.
             </p>
           </div>
-          <div className="mt-6 sm:mt-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-border" aria-hidden="true" />
-            <p className="font-mono text-sm text-stone-600">&mdash; Alex, founder</p>
+          <div className="mt-8 sm:mt-10 flex items-center gap-4">
+            <div className="h-px flex-1 bg-border/80" aria-hidden="true" />
+            <p className="font-mono text-sm text-stone-600 whitespace-nowrap">&mdash; Alex, founder</p>
           </div>
         </div>
       </div>

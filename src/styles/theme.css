@@ -130,11 +130,23 @@
   html {
     font-size: var(--font-size);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+  }
+
+  :where(a):focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--gradient-mid) 85%, black);
+    outline-offset: 2px;
+  }
+
+  :where(button):focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--gradient-mid) 85%, black);
+    outline-offset: 2px;
   }
 
   /**

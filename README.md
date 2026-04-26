@@ -1,6 +1,6 @@
-# Ticker Printer — Landing Site
+# Print-It — Landing Site
 
-Marketing site for **Ticker Printer**, a mobile app that turns your digital to-dos into printed thermal tickets. Local-first, private, no account required.
+Marketing site for **Print-It**, a mobile app that turns your digital to-dos into printed thermal tickets. Local-first, private, no account required.
 
 Built with React 18, TypeScript, Vite 6, Tailwind CSS v4, and `react-router` v7. Deployed to Cloudflare Pages.
 

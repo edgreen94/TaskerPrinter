@@ -1,6 +1,6 @@
 export default function WorkflowSteps() {
   return (
-    <div className="bg-black rounded-3xl p-5 sm:p-6 md:p-12 shadow-xl border border-gray-800">
+    <div className="bg-zinc-950 rounded-3xl p-5 sm:p-6 md:p-12 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.32)] border border-white/10 ring-1 ring-black/30">
       <div className="flex flex-col md:flex-row items-stretch md:items-start justify-between gap-5 md:gap-8">
         <div className="flex-1 text-center">
           <div className="flex items-center justify-center mb-4 md:mb-6 md:h-40">

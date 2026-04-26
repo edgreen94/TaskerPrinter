@@ -40,28 +40,28 @@ export default function Help() {
   return (
     <div className="min-h-screen bg-background">
       <RouteMeta
-        title="Help & support — Ticker Printer"
-        description="Getting Ticker Printer set up, staying set up, and a few things people ask about printers, Wi-Fi, and queues."
+        title="Help & support — Print-It"
+        description="Getting Print-It set up, staying set up, and a few things people ask about printers, Wi-Fi, and queues."
         path="/help"
       />
-      <header className="w-full px-4 sm:px-6 py-5 md:py-6 border-b border-border sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <div className="max-w-7xl mx-auto flex justify-between items-center gap-3">
-          <Link to="/" className="min-w-0" onClick={closeMenu}>
+      <header className="w-full border-b border-border/60 sticky top-0 z-50 bg-background/85 backdrop-blur-md supports-[backdrop-filter]:bg-background/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 md:py-5 flex justify-between items-center gap-3">
+          <Link to="/" className="min-w-0" onClick={closeMenu} aria-label="Print-It home">
             <Logo />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#help-faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQs</a>
-            <a href="#help-troubleshooting" className="text-muted-foreground hover:text-foreground transition-colors">Troubleshooting</a>
-            <a href="#help-contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</a>
-            <Link to="/#availability" className="text-muted-foreground hover:text-foreground transition-colors">Early access</Link>
-            <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Back to home</Link>
+          <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
+            <a href="#help-faq" className="text-muted-foreground hover:text-foreground transition-colors duration-200">FAQs</a>
+            <a href="#help-troubleshooting" className="text-muted-foreground hover:text-foreground transition-colors duration-200">Troubleshooting</a>
+            <a href="#help-contact" className="text-muted-foreground hover:text-foreground transition-colors duration-200">Contact</a>
+            <Link to="/#availability" className="text-muted-foreground hover:text-foreground transition-colors duration-200">Early access</Link>
+            <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors duration-200">Back to home</Link>
           </nav>
 
           <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
-              className="p-2 rounded-lg border border-border hover:bg-accent transition-colors"
+              className="p-2 rounded-xl border border-border/90 hover:bg-accent/80 transition-colors duration-200 shadow-sm"
               aria-expanded={menuOpen}
               aria-controls="help-mobile-nav"
               onClick={() => setMenuOpen((o) => !o)}
@@ -75,21 +75,21 @@ export default function Help() {
         {menuOpen && (
           <div
             id="help-mobile-nav"
-            className="md:hidden border-t border-border bg-background px-4 py-4 space-y-1"
+            className="md:hidden border-t border-border/60 bg-background/95 px-4 sm:px-6 py-3 space-y-0.5"
           >
-            <a href="#help-faq" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+            <a href="#help-faq" onClick={closeMenu} className="block py-3 px-3 rounded-xl hover:bg-accent/80 text-foreground font-medium text-sm transition-colors duration-200">
               FAQs
             </a>
-            <a href="#help-troubleshooting" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+            <a href="#help-troubleshooting" onClick={closeMenu} className="block py-3 px-3 rounded-xl hover:bg-accent/80 text-foreground font-medium text-sm transition-colors duration-200">
               Troubleshooting
             </a>
-            <a href="#help-contact" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+            <a href="#help-contact" onClick={closeMenu} className="block py-3 px-3 rounded-xl hover:bg-accent/80 text-foreground font-medium text-sm transition-colors duration-200">
               Contact
             </a>
-            <Link to="/#availability" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+            <Link to="/#availability" onClick={closeMenu} className="block py-3 px-3 rounded-xl hover:bg-accent/80 text-foreground font-medium text-sm transition-colors duration-200">
               Early access
             </Link>
-            <Link to="/" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-accent text-foreground">
+            <Link to="/" onClick={closeMenu} className="block py-3 px-3 rounded-xl hover:bg-accent/80 text-foreground font-medium text-sm transition-colors duration-200">
               Back to home
             </Link>
           </div>
@@ -98,8 +98,8 @@ export default function Help() {
 
       <section className="py-12 md:py-20 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Help &amp; support</h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">Help &amp; support</h1>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
             Getting set up, staying set up, and a few things people ask.
           </p>
         </div>
@@ -107,20 +107,20 @@ export default function Help() {
 
       <section id="help-faq" className="py-10 md:py-12 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">Frequently asked</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">Frequently asked</h2>
           <div className="space-y-5 sm:space-y-6">
             {faqs.map((faq, index) => {
               const Icon = faq.icon;
               return (
-                <div key={index} className="bg-card border border-border rounded-xl p-5 sm:p-6">
+                <div key={index} className="bg-card border border-border/90 rounded-2xl p-5 sm:p-6 shadow-sm ring-1 ring-black/[0.02]">
                   <div className="flex gap-3 sm:gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-sm ring-1 ring-white/20">
                         <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" aria-hidden="true" />
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{faq.question}</h3>
+                      <h3 className="text-lg sm:text-xl font-semibold tracking-tight mb-2 sm:mb-3">{faq.question}</h3>
                       <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                     </div>
                   </div>
@@ -131,12 +131,12 @@ export default function Help() {
         </div>
       </section>
 
-      <section id="help-troubleshooting" className="py-10 md:py-12 px-4 sm:px-6 bg-muted/30 scroll-mt-24">
+      <section id="help-troubleshooting" className="py-10 md:py-12 px-4 sm:px-6 bg-muted/25 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6 md:mb-8">When something goes wrong</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6 md:mb-8">When something goes wrong</h2>
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">Printer not found</h3>
+            <div className="bg-card border border-border/90 rounded-2xl p-6 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 className="text-lg font-semibold tracking-tight mb-3">Printer not found</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>&bull; Phone and printer on the same Wi-Fi</li>
                 <li>&bull; Restart the printer, wait 30 seconds</li>
@@ -145,8 +145,8 @@ export default function Help() {
               </ul>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">Faint or patchy prints</h3>
+            <div className="bg-card border border-border/90 rounded-2xl p-6 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 className="text-lg font-semibold tracking-tight mb-3">Faint or patchy prints</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>&bull; Clean the thermal print head</li>
                 <li>&bull; Use fresh, decent thermal paper</li>
@@ -155,8 +155,8 @@ export default function Help() {
               </ul>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">Queue is stuck</h3>
+            <div className="bg-card border border-border/90 rounded-2xl p-6 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 className="text-lg font-semibold tracking-tight mb-3">Queue is stuck</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>&bull; Force quit and reopen the app</li>
                 <li>&bull; Glance at the printer status lights</li>
@@ -165,8 +165,8 @@ export default function Help() {
               </ul>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
-              <h3 className="text-lg font-semibold mb-3">App feels sluggish</h3>
+            <div className="bg-card border border-border/90 rounded-2xl p-6 shadow-sm ring-1 ring-black/[0.02]">
+              <h3 className="text-lg font-semibold tracking-tight mb-3">App feels sluggish</h3>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>&bull; Update to the latest version</li>
                 <li>&bull; Archive old completed tickets</li>
@@ -180,20 +180,20 @@ export default function Help() {
 
       <section id="help-contact" className="py-10 md:py-12 px-4 sm:px-6 scroll-mt-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Still stuck?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Still stuck?</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 md:mb-8">
             Drop us a line. A human reads it, usually within a day.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
               href="mailto:support@tickerprinter.com"
-              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 rounded-lg hover:opacity-90 transition-opacity text-center"
+              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3.5 rounded-xl shadow-sm hover:shadow-md hover:bg-primary/95 transition-all duration-200 text-center font-medium"
             >
               Email support
             </a>
             <Link
               to="/"
-              className="border border-border px-6 sm:px-8 py-3 rounded-lg hover:bg-accent transition-colors text-center"
+              className="border border-border/90 bg-background px-6 sm:px-8 py-3.5 rounded-xl hover:bg-accent/80 transition-all duration-200 text-center font-medium"
             >
               Back home
             </Link>
@@ -201,9 +201,9 @@ export default function Help() {
         </div>
       </section>
 
-      <footer className="bg-muted/30 border-t border-border py-8 px-4 sm:px-6">
+      <footer className="bg-muted/25 border-t border-border/80 py-8 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto text-center text-sm text-muted-foreground">
-          <p>&copy; 2026 Ticker Printer. Made for people who like paper.</p>
+          <p>&copy; 2026 Print-It. Made for people who like paper.</p>
         </div>
       </footer>
     </div>

@@ -17,7 +17,7 @@ export default function Logo({ className = "" }: { className?: string }) {
           <rect x="50" y="145" width="20" height="8" rx="2" fill="#1a202c" />
         </svg>
       </div>
-      <span className="font-semibold text-xl text-foreground">Ticker Printer</span>
+      <span className="font-semibold text-xl text-foreground tracking-tight">Print-It</span>
     </div>
   );
 }
