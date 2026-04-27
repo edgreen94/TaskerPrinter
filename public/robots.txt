@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tickerprinter.com/sitemap.xml
+Sitemap: https://print-it-app.com/sitemap.xml

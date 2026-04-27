@@ -186,7 +186,7 @@ export default function Help() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="mailto:support@tickerprinter.com"
+              href="mailto:support@print-it-app.com"
               className="bg-primary text-primary-foreground px-6 sm:px-8 py-3.5 rounded-xl shadow-sm hover:shadow-md hover:bg-primary/95 transition-all duration-200 text-center font-medium"
             >
               Email support

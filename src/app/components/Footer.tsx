@@ -31,7 +31,7 @@ export default function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Support</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link to="/help" className="hover:text-foreground transition-colors duration-200">Help centre</Link></li>
-              <li><a href="mailto:support@tickerprinter.com" className="hover:text-foreground transition-colors duration-200">Email us</a></li>
+              <li><a href="mailto:support@print-it-app.com" className="hover:text-foreground transition-colors duration-200">Email us</a></li>
             </ul>
           </div>
         </div>

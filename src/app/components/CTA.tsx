@@ -15,7 +15,7 @@ export default function CTA() {
 
       <div className="max-w-5xl mx-auto grid gap-4 sm:grid-cols-2 mb-4 md:mb-5">
         <a
-          href="mailto:support@tickerprinter.com?subject=Ticker%20Printer%20iPhone%20Beta&body=Hi%20%E2%80%94%20I%27d%20like%20to%20join%20the%20iPhone%20beta."
+          href="mailto:support@print-it-app.com?subject=Print-It%20iPhone%20Beta&body=Hi%20%E2%80%94%20I%27d%20like%20to%20join%20the%20iPhone%20beta."
           className="group rounded-2xl border border-border/90 bg-card p-5 sm:p-6 shadow-sm hover:border-emerald-400/70 hover:shadow-md transition-all duration-200 flex items-start gap-4"
         >
           <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 text-white flex items-center justify-center shadow-sm ring-1 ring-white/20">
@@ -31,7 +31,7 @@ export default function CTA() {
         </a>
 
         <a
-          href="mailto:support@tickerprinter.com?subject=Ticker%20Printer%20Android%20Updates&body=Hi%20%E2%80%94%20please%20keep%20me%20posted%20on%20the%20Android%20build."
+          href="mailto:support@print-it-app.com?subject=Print-It%20Android%20Updates&body=Hi%20%E2%80%94%20please%20keep%20me%20posted%20on%20the%20Android%20build."
           className="group rounded-2xl border border-border/90 bg-card p-5 sm:p-6 shadow-sm hover:border-emerald-400/70 hover:shadow-md transition-all duration-200 flex items-start gap-4"
         >
           <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center shadow-sm ring-1 ring-white/20">
@@ -49,8 +49,8 @@ export default function CTA() {
 
       <p className="text-center text-sm text-muted-foreground mb-10 md:mb-12">
         Or email{" "}
-        <a href="mailto:support@tickerprinter.com" className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-emerald-600/60 transition-colors">
-          support@tickerprinter.com
+        <a href="mailto:support@print-it-app.com" className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-emerald-600/60 transition-colors">
+          support@print-it-app.com
         </a>{" "}
         directly.
       </p>
