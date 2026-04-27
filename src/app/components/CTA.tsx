@@ -1,7 +1,45 @@
-import { Mail, ArrowUpRight } from "lucide-react";
+import { FormEvent, useState } from "react";
+import { Mail, Send, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { SectionShell, SectionHeading } from "./Section";
 
 export default function CTA() {
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState("Tell us where to reach you and what setup you have in mind.");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("submitting");
+    setMessage("Sending your note...");
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        body: formData,
+      });
+
+      const payload = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(payload?.error ?? "Something went wrong.");
+      }
+
+      form.reset();
+      setStatus("success");
+      setMessage(payload?.message ?? "You’re on the list. We’ll be in touch.");
+    } catch (error) {
+      setStatus("error");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "We couldn’t send that just now. Email support@print-it-app.com and we’ll still get you sorted.",
+      );
+    }
+  }
+
   return (
     <SectionShell id="availability" className="bg-gradient-to-b from-muted/20 to-background">
       <SectionHeading
@@ -13,60 +51,136 @@ export default function CTA() {
         }
       />
 
-      <div className="max-w-5xl mx-auto grid gap-4 sm:grid-cols-2 mb-4 md:mb-5">
-        <a
-          href="mailto:support@print-it-app.com?subject=Print-It%20iPhone%20Beta&body=Hi%20%E2%80%94%20I%27d%20like%20to%20join%20the%20iPhone%20beta."
-          className="group rounded-2xl border border-border/90 bg-card p-5 sm:p-6 shadow-sm hover:border-emerald-400/70 hover:shadow-md transition-all duration-200 flex items-start gap-4"
+      <div className="max-w-5xl mx-auto grid gap-6 lg:grid-cols-[1.35fr_0.95fr] mb-10 md:mb-12">
+        <form
+          method="post"
+          action="/api/waitlist"
+          onSubmit={handleSubmit}
+          className="rounded-[2rem] border border-border/90 bg-card p-6 sm:p-8 shadow-sm"
         >
-          <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 text-white flex items-center justify-center shadow-sm ring-1 ring-white/20">
-            <Mail className="w-5 h-5" aria-hidden="true" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between gap-3 mb-1">
-              <p className="font-semibold text-foreground tracking-tight">Request the iPhone beta</p>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-emerald-600 transition-colors duration-200 flex-shrink-0" aria-hidden="true" />
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 text-white shadow-sm ring-1 ring-white/20">
+              <Send className="h-5 w-5" aria-hidden="true" />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">Opens your email app. A hello is enough &mdash; we&rsquo;ll reply.</p>
-          </div>
-        </a>
-
-        <a
-          href="mailto:support@print-it-app.com?subject=Print-It%20Android%20Updates&body=Hi%20%E2%80%94%20please%20keep%20me%20posted%20on%20the%20Android%20build."
-          className="group rounded-2xl border border-border/90 bg-card p-5 sm:p-6 shadow-sm hover:border-emerald-400/70 hover:shadow-md transition-all duration-200 flex items-start gap-4"
-        >
-          <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center shadow-sm ring-1 ring-white/20">
-            <Mail className="w-5 h-5" aria-hidden="true" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between gap-3 mb-1">
-              <p className="font-semibold text-foreground tracking-tight">Join the Android list</p>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-emerald-600 transition-colors duration-200 flex-shrink-0" aria-hidden="true" />
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight text-foreground">Join the waitlist</h3>
+              <p className="text-sm text-muted-foreground">A short note is enough. We&rsquo;ll reach out personally.</p>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">Opens your email app. We&rsquo;ll shout when the build&rsquo;s ready.</p>
           </div>
-        </a>
-      </div>
 
-      <p className="text-center text-sm text-muted-foreground mb-10 md:mb-12">
-        Or email{" "}
-        <a href="mailto:support@print-it-app.com" className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-emerald-600/60 transition-colors">
-          support@print-it-app.com
-        </a>{" "}
-        directly.
-      </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="block sm:col-span-2">
+              <span className="mb-2 block text-sm font-medium text-foreground">Email address</span>
+              <input
+                type="email"
+                name="email"
+                required
+                autoComplete="email"
+                placeholder="you@example.com"
+                className="w-full rounded-xl border border-border/90 bg-background px-4 py-3 text-foreground shadow-sm transition-colors outline-none placeholder:text-muted-foreground/80 focus:border-emerald-500"
+              />
+            </label>
 
-      <div className="max-w-5xl mx-auto mb-10 md:mb-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 text-left">
-        <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Right now</p>
-          <p className="font-semibold text-foreground tracking-tight">iPhone beta, actively testing</p>
-        </div>
-        <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm">
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Next up</p>
-          <p className="font-semibold text-foreground tracking-tight">Android build, planning underway</p>
-        </div>
-        <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm sm:col-span-2 md:col-span-1">
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Best setup</p>
-          <p className="font-semibold text-foreground tracking-tight">Home Wi-Fi and an ESC/POS printer</p>
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-foreground">Platform</span>
+              <select
+                name="platform"
+                defaultValue="iPhone"
+                className="w-full rounded-xl border border-border/90 bg-background px-4 py-3 text-foreground shadow-sm transition-colors outline-none focus:border-emerald-500"
+              >
+                <option value="iPhone">iPhone beta</option>
+                <option value="Android">Android updates</option>
+                <option value="Both">Both</option>
+              </select>
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-foreground">Printer model</span>
+              <input
+                type="text"
+                name="printerModel"
+                autoComplete="off"
+                placeholder="Optional"
+                className="w-full rounded-xl border border-border/90 bg-background px-4 py-3 text-foreground shadow-sm transition-colors outline-none placeholder:text-muted-foreground/80 focus:border-emerald-500"
+              />
+            </label>
+
+            <label className="block sm:col-span-2">
+              <span className="mb-2 block text-sm font-medium text-foreground">What are you hoping to use it for?</span>
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Desk setup, home workflow, ADHD support, family planning, tiny receipt-printer joy..."
+                className="w-full resize-y rounded-xl border border-border/90 bg-background px-4 py-3 text-foreground shadow-sm transition-colors outline-none placeholder:text-muted-foreground/80 focus:border-emerald-500"
+              />
+            </label>
+
+            <label className="hidden" aria-hidden="true">
+              Company
+              <input type="text" name="company" tabIndex={-1} autoComplete="off" />
+            </label>
+          </div>
+
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-5 py-3 text-sm font-semibold text-background shadow-sm transition-all hover:translate-y-[-1px] hover:bg-foreground/92 disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {status === "submitting" ? "Sending..." : "Request access"}
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <p
+              className={`text-sm leading-relaxed ${
+                status === "error"
+                  ? "text-destructive"
+                  : status === "success"
+                    ? "text-emerald-700"
+                    : "text-muted-foreground"
+              }`}
+              role="status"
+            >
+              {status === "success" && <CheckCircle2 className="mr-1 inline h-4 w-4 align-[-2px]" aria-hidden="true" />}
+              {message}
+            </p>
+          </div>
+
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+            Prefer email? You can still write to{" "}
+            <a
+              href="mailto:support@print-it-app.com"
+              className="font-medium text-foreground underline decoration-border underline-offset-4 hover:decoration-emerald-600/60 transition-colors"
+            >
+              support@print-it-app.com
+            </a>
+            .
+          </p>
+        </form>
+
+        <div className="grid gap-4">
+          <div className="rounded-2xl border border-border/90 bg-card p-5 sm:p-6 shadow-sm">
+            <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 text-white shadow-sm ring-1 ring-white/20">
+              <Mail className="h-5 w-5" aria-hidden="true" />
+            </div>
+            <p className="font-semibold text-foreground tracking-tight mb-1">What happens next</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              We read every submission, sort by platform and printer fit, and reply when there&rsquo;s a sensible next step.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm">
+            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Right now</p>
+            <p className="font-semibold text-foreground tracking-tight">iPhone beta, actively testing</p>
+          </div>
+          <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm">
+            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Next up</p>
+            <p className="font-semibold text-foreground tracking-tight">Android build, planning underway</p>
+          </div>
+          <div className="rounded-2xl border border-border/90 bg-card p-5 shadow-sm">
+            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">Best setup</p>
+            <p className="font-semibold text-foreground tracking-tight">Home Wi-Fi and an ESC/POS printer</p>
+          </div>
         </div>
       </div>
 

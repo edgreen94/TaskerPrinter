@@ -56,6 +56,22 @@ src/
 Cloudflare Pages reads `wrangler.toml` (`pages_build_output_dir = "dist"`).
 `pnpm build` produces the `dist/` folder that Pages serves.
 
+**Git-connected Pages (dashboard):** set **Build command** to `pnpm run build`, **Build output directory** to `dist`, and leave **Deploy command** empty. Pages publishes `dist` automatically after a successful build. Do not use `npx wrangler deploy` there—that targets Workers and will fail without a Worker entry point.
+
+**CLI:** `pnpm run build && npx wrangler pages deploy dist --project-name=taskerprinter`
+
+## Waitlist form
+
+The landing page form posts to the Pages Function at `functions/api/waitlist.js`.
+
+To make submissions deliver to your inbox on Cloudflare Pages:
+
+1. Enable Cloudflare Email Service / email sending for the domain you want to send from.
+2. Confirm `support@print-it-app.com` is a valid destination address, or change the addresses in [`wrangler.toml`](./wrangler.toml).
+3. Make sure the `WAITLIST_EMAIL` binding is present for the Pages project.
+
+The current setup sends submissions to `support@print-it-app.com` and uses that same address as the sender by default.
+
 ## License
 
 Uses shadcn/ui conventions (MIT) — see [`ATTRIBUTIONS.md`](./ATTRIBUTIONS.md).
