@@ -22,6 +22,8 @@ Open http://localhost:5173.
 | `pnpm dev`         | Vite dev server with HMR           |
 | `pnpm build`       | Production build to `dist/`        |
 | `pnpm preview`     | Preview the production build       |
+| `pnpm pages:dev`   | Run Cloudflare Pages locally, including `/functions` |
+| `pnpm pages:deploy`| Deploy the Pages project using `wrangler.toml` |
 | `pnpm typecheck`   | `tsc --noEmit` over `src/`         |
 
 ## Project layout
@@ -58,7 +60,9 @@ Cloudflare Pages reads `wrangler.toml` (`pages_build_output_dir = "dist"`).
 
 **Git-connected Pages (dashboard):** set **Build command** to `pnpm run build`, **Build output directory** to `dist`, and leave **Deploy command** empty. Pages publishes `dist` automatically after a successful build. Do not use `npx wrangler deploy` there—that targets Workers and will fail without a Worker entry point.
 
-**CLI:** `pnpm run build && npx wrangler pages deploy dist --project-name=taskerprinter`
+**CLI:** `pnpm run build && pnpm pages:deploy`
+
+Important: this project uses a Pages Function in [`functions/api/waitlist.js`](./functions/api/waitlist.js). If you deploy only the `dist/` folder as a static upload, the site will update but `/api/waitlist` will not be active. Use Git-connected Pages or `wrangler pages deploy` from the project root so Cloudflare sees both `wrangler.toml` and the root-level `functions/` directory.
 
 ## Waitlist form
 
@@ -69,6 +73,7 @@ To make submissions deliver to your inbox on Cloudflare Pages:
 1. Enable Cloudflare Email Service / email sending for the domain you want to send from.
 2. Confirm `support@print-it-app.com` is a valid destination address, or change the addresses in [`wrangler.toml`](./wrangler.toml).
 3. Make sure the `WAITLIST_EMAIL` binding is present for the Pages project.
+4. Redeploy after changing bindings or `wrangler.toml`, since production config is applied on deployment.
 
 The current setup sends submissions to `support@print-it-app.com` and uses that same address as the sender by default.
 
